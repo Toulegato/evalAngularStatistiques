@@ -1,2 +1,2 @@
-<h1>{{stat1.titre}}</h1>
-<h1>{{stat2.titre}}</h1>
+<p *ngFor="let s of tabStatistique">
+  <app-une-stat [uneStat]='s'> </app-une-stat>
