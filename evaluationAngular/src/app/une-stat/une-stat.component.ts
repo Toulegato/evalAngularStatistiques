@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Statistique } from '../models/statistique';
 
 @Component({
@@ -7,9 +7,14 @@ import { Statistique } from '../models/statistique';
   styleUrls: ['./une-stat.component.css']
 })
 export class UneStatComponent implements OnInit {
-  @Input() public uneStat!: Statistique;
+  @Input() uneStat!: Statistique;
+  @Output() deleteStat = new EventEmitter();
 
   constructor() { }
+
+  delete(){
+    this.deleteStat.emit();
+  }
 
   ngOnInit(): void {
   }
